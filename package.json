@@ -1,0 +1,38 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "node-less-chokidar": "^0.1.2",
+    "npm-run-all": "^4.1.3",
+    "postcss-preset-env": "^5.1.0",
+    "react": "^16.4.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4",
+    "semantic-ui": "^2.3.1"
+  },
+  "scripts": {
+    "build-postcss": "postcss src/assets/css/styles.css -o src/dist/css/styles.min.css",
+    "watch-postcss": "postcss src/assets/css/styles.css -o src/dist/css/styles.min.css -w",
+    "build-css": "node-less-chokidar src/assets/css",
+    "watch-css": "node-less-chokidar src/assets/css --watch",
+    "watch-styles": "npm-run-all build-styles watch-css watch-postcss",
+    "build-styles": "npm-run-all build-css build-postcss",
+    "start": "npm-run-all start-js watch-styles",
+    "start-js": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.2",
+    "cssnano": "^3.10.0",
+    "less-loader": "^4.1.0",
+    "postcss-cli": "^5.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "semantic-ui-react": "^0.81.1",
+    "webfontloader": "^1.6.28"
+  }
+}
